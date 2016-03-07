@@ -6,6 +6,7 @@ describe Kele do
   end
 
   it 'does something useful' do
-    expect(false).to eq(true)
+    user = Kele.new("test", "test1")
+    expect(user).not_to be nil
   end
 end

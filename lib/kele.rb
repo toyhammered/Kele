@@ -1,5 +1,7 @@
 require "kele/version"
 
-module Kele
-  # Your code goes here...
+class Kele
+  def initialize(email, password)
+
+  end
 end
