@@ -7,6 +7,12 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
+    dotenv (2.1.0)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    json (1.8.3)
+    multi_xml (0.5.5)
     rake (10.5.0)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
@@ -27,6 +33,9 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.11)
+  dotenv
+  httparty (~> 0.13)
+  json (~> 1.8, >= 1.8.3)
   kele!
   rake (~> 10.0)
   rspec (~> 3.0)
