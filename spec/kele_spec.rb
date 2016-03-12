@@ -10,7 +10,15 @@ describe Kele, type: :request do
 
       it 'authenticates user' do
         response = Kele.new(ENV['BLOC_EMAIL'], ENV['BLOC_PASSWORD'])
-        expect(response.instance_variable_get(:@auth_token)).to_not be_nil
+        expect(response.instance_variable_get(:@auth_token)).to be_a String
+      end
+
+    end
+
+    describe '#get_me' do
+      it 'returns an object' do
+        response = Kele.new(ENV['BLOC_EMAIL'], ENV['BLOC_PASSWORD'])
+        expect(response.get_me).to be_a Object
       end
 
     end
