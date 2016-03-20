@@ -18,10 +18,15 @@ describe Kele, type: :request do
     describe '#get_me' do
       it 'returns an object' do
         response = Kele.new(ENV['BLOC_EMAIL'], ENV['BLOC_PASSWORD'])
-        expect(response.get_me).to be_a Object
+        response = response.get_me
+        expect(response.instance_variable_get(:@user_data)).to be_a Object
       end
+    end
+
+    describe '#get_mentor_availability' do
 
     end
+
   end
 
 end

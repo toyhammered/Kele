@@ -14,8 +14,18 @@ class Kele
   end
 
   def get_me
-    response = self.class.get(api_url("users/me"), headers: { "authorization": @auth_token })
+    response = self.class.get(api_url("users/me"), headers: { "authorization": @auth_token } )
     @user_data = JSON.parse(response.body)
+    @user_data.keys.each do |key|
+      self.class.send(:define_method, key.to_sym) do
+        @user_data[key]
+      end
+    end
+  end
+
+  def get_mentor_availability
+    response = self.class.get(api_url("mentors/#{current_enrollment['mentor_id']}/student_availability"), headers: { "authorization": @auth_token })
+    @mentor_availability = JSON.parse(response.body)
 
   end
 
